@@ -1,0 +1,71 @@
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - statistics_get
+  - record_write
+  - weight_write
+  - intent_study_hours_write
+  - intent_weight_write
+  - study_hours_write
+  - weight_stats_get
+  - study_hours_stats_get
+
+entities:
+  - weight
+  - study_hours
+  - period
+
+actions:
+  - action_context_date
+
+slots:
+
+  weight:
+    type: text
+
+  study_hours:
+    type: text
+
+  period:
+    type: text
+    initial_value: "week"
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_thanks:
+  - text: "You are welcome."
+
+  utter_statistics_get:
+  - text: "What kind of statistics do you want to get?"
+
+  utter_weight_stats_get:
+  - text: "Over the past {period}, the weight loss rate has increased. 15 kg remained to the target."
+
+  utter_study_hours_stats_get:
+  - text: "20% more study time than planned this {period}"
+
+  utter_record_write:
+  - text: "What kind of record do you want to write?"
+
+  utter_weight_write:
+  - text: "Record created successfully."
+
+  utter_study_hours_write:
+  - text: "Record created successfully."
+
+  utter_intent_weight_write:
+  - text: "What is your weight?"
+
+  utter_intent_study_hours_write:
+  - text: "How much time did you study?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
